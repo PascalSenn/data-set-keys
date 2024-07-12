@@ -27,7 +27,7 @@ namespace test
                 .AddGraphQLServer()
                 .AddPagingArguments()
                 .AddQueryType<Query>();
-            services.AddDbContext<ApplicationDbContext>(o => o.UseSqlite("Data Source=persons.db"));
+            services.AddDbContext<ApplicationDbContext>(o => o.UseNpgsql("Host=localhost;Database=data-set-keys;Username=postgres;Password=postgres"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
